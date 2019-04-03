@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/RDCO_model_A_oct2018#"
+     xml:base="http://www.semanticweb.org/RDCO_model_A_oct2018"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fanny Rigour</dc:creator>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Lagorce</dc:creator>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ana Rath</dc:creator>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDCO is a case-finding ontology of unresolved rare diseases. It contains the &quot;Rare Disease&quot; classes known from the Orphanet knowledge base and their unique identifiers (ORPHAnumbers), HPO terms (Orphanet-HPO annotations) and genes (RD gene relationships) semantically related to Orphanet diseases. It also contains unresolved cases as if they were new potential diseases (each unresolved case being defined as a potential new disease and therefore assigned to a provisional ORPHA number), the associated HPO terms (from the Phenopacket) and possibly associated genes.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</owl:versionInfo>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-10-10T15:24:36</terms:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marc Hanauer</dc:creator>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebastian Köhler</dc:creator>
+        <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">English</dc:language>
+        <ns:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CC BY-ND 4.0</ns:license>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/language"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000229 -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000229">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://semanticscience.org/resource/SIO_000232"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+        <rdfs:range rdf:resource="http://edamontology.org/data_1772"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has output is a relation between an process and an entity, where the entity is present at the end of the process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://semanticscience.org/ontology/sio.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has output</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000232 -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_000232">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is output of is a relation between an entity and a process, where the entity is present at the end of the process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://semanticscience.org/ontology/sio.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is output of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#association_has_subject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#association_has_subject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#subject_has_association"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between an association and an unsovled rare disease case (phenopacket).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">association has subject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_case -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_case">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_case"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-Case"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between association and unsovled rare disease case (phenopacket).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has object case</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_clinicalEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_clinicalEntity">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_clinicalEntity"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity"/>
+        <rdfs:range rdf:resource="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between association and a clinical entity (ORDO)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has object clinical entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#has_score -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_score"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:range rdf:resource="http://edamontology.org/data_1772"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between Association and Score.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has score</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#has_similarity_level -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#has_similarity_level">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#similarity_level_for"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between Association and Similarity.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has similarity level</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#highlighted_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#highlighted_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#highlights"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association between clinical entity and case (OR between 2 cases) highlighted by an algorithm.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">highlighted by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#highlights -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#highlights">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm highlights an association between clinical entity and case (OR between 2 cases).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">highlights</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_case -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_case">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between an unsovled rare disease case (phenopacket) and an association.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is object case</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_clinicalEntity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_clinicalEntity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between a clinical entity (ORDO) and an association.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is object clinical entity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#is_score -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#is_score">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between Score and Association.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is score</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#similarity_level_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#similarity_level_for">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between Similarity and Association.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">similarity level for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#subject_has_association -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#subject_has_association">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between an unsovled rare disease case (phenopacket) and an association.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">subject has association</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#has_score_value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score_value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://edamontology.org/data_1772 -->
+
+    <owl:Class rdf:about="http://edamontology.org/data_1772">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000232"/>
+                                <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_score"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Score_Type_1"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Score_Type_2"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Score_Type_3"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+        <owl:disjointWith rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+        <owl:disjointWith rdf:resource="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A numerical value, that is some type of scored value arising for example from a prediction method.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In RDCO, the higer score means stronger similarity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://edamontology.org/EDAM.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Score</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HOM_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HOM_0000000">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C25227"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C49507"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C54722"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#similarity_level_for"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+        <owl:disjointWith rdf:resource="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Relation between biological objects that resemble or are related to each other sufficiently to warrant a comparison.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/hom.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similarity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25227 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25227">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An elevated level or position or degree; greater than normal in degree or intensity or amount.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/ncit.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">High</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C49507 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C49507">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mid-way between small and large in number, quantity, magnitude or extent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/ncit.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C54722 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C54722">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A minimum level or position or degree; less than normal in degree, intensity or amount.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/ncit.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Low</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000094 -->
+
+    <owl:Class rdf:about="http://semanticscience.org/resource/SIO_000094">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://semanticscience.org/resource/SIO_000229"/>
+                        <owl:someValuesFrom rdf:resource="http://edamontology.org/data_1772"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#highlights"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A number was randomly assigned to each algorithm to identify them.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An algorithm is an effective method expressed as a finite list of well-defined instructions for calculating a function.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://semanticscience.org/ontology/sio.owl</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity -->
+
+    <owl:Class rdf:about="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_clinicalEntity"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A set of phenotypic abnormalities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orphanet</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clinical Entity</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#Association -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Association">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-Case"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association between a clinical entity (ORDO) and unsovled rare disease case (phenopacket) OR unsovled rare disease case (phenopacket) and an other one. The association is made with different algorithmes that provide similarity scores that provide a ranking.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orphanet</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-Case -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-Case">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_similarity_level"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#association_has_subject"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_case"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://edamontology.org/data_1772"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#highlighted_by"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score_value"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association between an unsovled rare disease case (phenopacket) and an other one.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association Case-Case</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_similarity_level"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/HOM_0000000"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#association_has_subject"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Case"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_clinicalEntity"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.orpha.net/ORDO/Orphanet_C001#Clinical_Entity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://edamontology.org/data_1772"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#highlighted_by"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://semanticscience.org/resource/SIO_000094"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#has_score_value"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association between a clinical entity (ORDO) and unsovled rare disease case (phenopacket).</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Association Case-Clinical Entity</rdfs:label>
+    </owl:Class>
+    
+
+    <!-- http://www.semanticweb.org/RDCO_model_A_oct2018#Case -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/RDCO_model_A_oct2018#Case">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#is_object_case"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#subject_has_association"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/RDCO_model_A_oct2018#Association"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One case represents an unresolved case of rare diseases. Phenopacket contains several data: identifier, sex, phenotypes and genetic variant if existing.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Orphanet</rdfs:isDefinedBy>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Case</rdfs:label>
+    </owl:Class>
+    
+
