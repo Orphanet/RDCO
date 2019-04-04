@@ -1,12 +1,13 @@
 package RDCO.algorithms;
 
+import RDCO.Declaration;
 import RDCO.scoreTypes.ScoreType;
 
 public abstract class Algorithm {
 	protected String label;
 	protected String comment;
 	protected String baseIri = "http://www.semanticweb.org/RDCO_model_A_oct2018#";
-	protected int id;
+	protected String id;
 	protected ScoreType scoreType;
 	
 	public  ScoreType getScoreType() {
@@ -38,14 +39,14 @@ public abstract class Algorithm {
 		return baseIri+label.replace(" ", "_");
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getDeclaration(){
-		String declaration = scoreType.getDeclaration();
+		String declaration = Declaration.Declare(scoreType);
 		declaration +="    <!-- "+getIri()+" -->\n\n    <owl:Class rdf:about=\""+getIri()+"\">\n        <rdfs:subClassOf rdf:resource=\"http://semanticscience.org/resource/SIO_000094\"/>\n        <rdfs:comment rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getComment()+"</rdfs:comment>\n        <rdfs:label rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getLabel()+"</rdfs:label>\n    </owl:Class>\n\n"; 
 		return declaration;
 	}

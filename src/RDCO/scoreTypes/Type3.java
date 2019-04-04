@@ -6,6 +6,7 @@ import RDCO.algorithms.ResnikSymmetric;
 public class Type3 extends ScoreType{
 	public Type3(){
 		setLabel("Type 3");
+		setId("Type_3");
 		setComment("This score has range 0 and (-log(1/number of Diseases in ORDO)).");
 	}
 	

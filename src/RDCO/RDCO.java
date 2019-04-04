@@ -82,7 +82,7 @@ public class RDCO {
 	public String getDeclaration(){			
 		String declaraltion = "";
 		for(MethodParser meth : Method){		
-			declaraltion+=meth.getDeclaration();			
+			declaraltion+=Declaration.Declare(meth);			
 		}
 		return declaraltion;
 	}

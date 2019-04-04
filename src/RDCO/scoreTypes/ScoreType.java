@@ -4,7 +4,8 @@ public abstract class ScoreType {
 	protected String label;
 	protected String comment;
 	protected String baseIri = "http://www.semanticweb.org/RDCO_model_A_oct2018#Score_";
-	private boolean declared = false;
+	protected String id;
+	//private boolean declared = false;
 	
 	
 	public String getLabel() {
@@ -29,9 +30,9 @@ public abstract class ScoreType {
 	}
 	
 	public String getDeclaration(){
-		if(declared){return "";}
+		//if(declared){return "";}
 		
-		declared=true;
+		//declared=true;
 		
 		return "\n\n    <!-- "+getIri()+" -->\n\n"
 			+ "    <owl:Class rdf:about=\""+getIri()+"\">\n"
@@ -45,5 +46,11 @@ public abstract class ScoreType {
 	public String getAlgorithmCollection() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 }

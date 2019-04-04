@@ -5,6 +5,7 @@ import RDCO.algorithms.Phenodigm;
 public class Type2 extends ScoreType{
 	public Type2(){
 		setLabel("Type 2");
+		setId("Type_2");
 		setComment("This score has range 0 and 100.");
 	}
 	

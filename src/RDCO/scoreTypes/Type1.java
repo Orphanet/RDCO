@@ -9,6 +9,7 @@ import RDCO.algorithms.JaccardWeighted;
 public class Type1 extends ScoreType{
 	public Type1(){
 		setLabel("Type 1");
+		setId("Type_1");
 		setComment("This score has range 0 and 1.");
 	}
 	

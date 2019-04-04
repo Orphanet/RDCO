@@ -70,8 +70,8 @@ public class RDCOMain {
 					rdcoObject.instaniateObjects();
 					
 					//System.out.println(rdcoObject.toString());
-					writer.write(subject.getDeclaration());
-					writer.write(rdcoObject.getDeclaration());
+					writer.write(Declaration.Declare(subject));
+					writer.write(Declaration.Declare(rdcoObject));
 					writer.write(rdcoObject.toOWL());
 					
 				} catch (JsonParseException e) {

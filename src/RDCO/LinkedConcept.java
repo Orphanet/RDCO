@@ -40,7 +40,7 @@ public abstract class LinkedConcept {
 	}
 	
 	public String toString(){
-		return "id : "+id+"; label : "+label+"; iri : "+iri;
+		return id;
 	}
 	
 	public String toOWL(){

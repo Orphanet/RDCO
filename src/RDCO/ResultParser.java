@@ -130,6 +130,6 @@ public class ResultParser {
 	}
 
 	public String getDeclaration(){			
-		return concept.getDeclaration();
+		return Declaration.Declare(concept);
 	}
 }

@@ -117,9 +117,9 @@ public class MethodParser {
 	
 	
 	public String getDeclaration(){			
-		String declaraltion = algo.getDeclaration();
+		String declaraltion = Declaration.Declare(algo);
 		for(ResultParser res : results){			
-			declaraltion+=res.getDeclaration();			
+			declaraltion+=Declaration.Declare(res);			
 		}
 		return declaraltion;
 	}
