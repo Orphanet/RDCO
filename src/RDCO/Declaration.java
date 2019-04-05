@@ -37,7 +37,7 @@ public class Declaration {
 			
 			id = (String) getId.invoke(obj);
 				
-			if(declared.containsKey(id) && obj.getClass().equals(declared.get(id))){				
+			if(declared.containsKey(obj.getClass().getName() + id) ){				
 				return true;
 			}
 

@@ -86,7 +86,6 @@ public class MethodParser {
 			}
 			Class<?> cls =  Class.forName("RDCO.algorithms."+className);
 			algo = (Algorithm) cls.newInstance();
-			System.out.println("algo label : "+algo.getLabel()+"; id : "+algo.getId());
 			
 		}catch (ClassNotFoundException e) {
             e.printStackTrace();
