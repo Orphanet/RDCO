@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Declaration {
 	@SuppressWarnings("rawtypes")
-	static HashMap<String, Class> declared = new HashMap<>();
+	static HashMap<String, Boolean> declared = new HashMap<>();
 	
 	public static String Declare(Object obj){
 		if(isDeclared(obj)){
@@ -41,7 +41,7 @@ public class Declaration {
 				return true;
 			}
 
-			declared.put(id,obj.getClass());
+			declared.put(obj.getClass().getName() + id,true);
 			return false;
 		} catch (IllegalAccessException | IllegalArgumentException
 					| InvocationTargetException | NoSuchMethodException | SecurityException e) {
