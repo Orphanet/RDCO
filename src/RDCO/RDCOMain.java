@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,11 +18,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class RDCOMain {
 
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource" })
 	public static void main(String[] args) throws IOException {
 
 		// UNIX
-		File folder = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\");
+		File folderOrdo = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\ORDO\\");
+		File folderPheno = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\pheno\\");
 		
 		BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\RDCO.owl"));
 		BufferedWriter errors_writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\errors.txt"));
@@ -35,8 +39,11 @@ public class RDCOMain {
 		
 		writer.write(header);
 
-		File[] listOfFiles = folder.listFiles();
-
+		//File[] listOfFiles = folderOrdo.listFiles();
+		List< File > listOfFiles = new ArrayList<File> (Arrays.asList(folderOrdo.listFiles()));
+		listOfFiles.addAll(Arrays.asList(folderPheno.listFiles()));
+		
+	
 		int nfile = 0;
 		for (File fileJson : listOfFiles) {
 			nfile += 1;
@@ -45,11 +52,9 @@ public class RDCOMain {
 				
 				try {
 				
-					if (nfile < 55) {
-						System.out.println("-----> " + fileJson + " - " + nfile);
-					}
+					System.out.println("-----> " + fileJson + " - " + nfile);
 					
-					
+									
 					// Parse file name to get Phenopacket ID
 					String phenoId="";
 					Pattern pattern = Pattern.compile("^.*_(S\\d+)[_\\.].*$");
