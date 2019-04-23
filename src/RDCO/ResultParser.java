@@ -71,19 +71,23 @@ public class ResultParser {
 	}
 	
 	public void instantiateLinkedConcept(){
-		Pattern patternOrpha = Pattern.compile("^ORPHA:(\\d+)$"); 
-		Matcher matchOrpha   = patternOrpha.matcher(itemId);
-		if(matchOrpha.matches()){
-			setConcept(new Disease(matchOrpha.group(1),itemName));
-		}else{
-			Pattern patternPheno  = Pattern.compile("^.*_(S\\d+)_.*$"); 
-			Matcher matchPheno    = patternPheno.matcher(itemId);
-			if(matchPheno.matches()){
-
-				setConcept(new Phenome(matchPheno.group(1)));
-				
+		
+		if(!configuration.overMaxRank(this.rank)){
+		
+			Pattern patternOrpha = Pattern.compile("^ORPHA:(\\d+)$"); 
+			Matcher matchOrpha   = patternOrpha.matcher(itemId);
+			if(matchOrpha.matches()){
+				setConcept(new Disease(matchOrpha.group(1),itemName));
 			}else{
-				System.out.println("ERROR itemId : "+itemId);
+				Pattern patternPheno  = Pattern.compile("^.*_(S\\d+)_.*$"); 
+				Matcher matchPheno    = patternPheno.matcher(itemId);
+				if(matchPheno.matches()){
+	
+					setConcept(new Phenome(matchPheno.group(1)));
+					
+				}else{
+					System.out.println("ERROR itemId : "+itemId);
+				}
 			}
 		}
 	}
@@ -91,6 +95,8 @@ public class ResultParser {
 	public String toOWL(){
 		
 		//return getPhenoId()+concept.toOWL();
+		if(configuration.overMaxRank(this.rank)){return "";}
+		
 		String typeOfAsso = "";
 		if(concept.getClass().equals(Disease.class)){
 			typeOfAsso = "    <rdfs:subClassOf rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#Association_Case-ClinicalEntity\"/>";
@@ -129,7 +135,8 @@ public class ResultParser {
 		
 	}
 
-	public String getDeclaration(){			
+	public String getDeclaration(){	
+		if(configuration.overMaxRank(this.rank)){return "";}
 		return Declaration.Declare(concept);
 	}
 }

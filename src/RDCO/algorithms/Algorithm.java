@@ -1,6 +1,7 @@
 package RDCO.algorithms;
 
 import RDCO.Declaration;
+import RDCO.configuration;
 import RDCO.scoreTypes.ScoreType;
 
 public abstract class Algorithm {
@@ -46,12 +47,20 @@ public abstract class Algorithm {
 		this.id = id;
 	}
 	public String getDeclaration(){
+		
+		if(! configuration.usedAlgorithm(this.label)){
+			return "";
+		}
+		
 		String declaration = Declaration.Declare(scoreType);
 		declaration +="    <!-- "+getIri()+" -->\n\n    <owl:Class rdf:about=\""+getIri()+"\">\n        <rdfs:subClassOf rdf:resource=\"http://semanticscience.org/resource/SIO_000094\"/>\n        <rdfs:comment rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getComment()+"</rdfs:comment>\n        <rdfs:label rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getLabel()+"</rdfs:label>\n    </owl:Class>\n\n"; 
 		return declaration;
 	}
 	
 	public String toOWL(){
+		if(! configuration.usedAlgorithm(this.label)){
+			return "";
+		}
 		return "                <owl:Restriction>\n"
 			+ "                    <owl:onProperty rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#has_score\"/>\n"
 			+ "                    <owl:someValuesFrom rdf:resource=\""+scoreType.getIri()+"\"/>\n"

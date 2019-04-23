@@ -22,6 +22,7 @@ public class RDCOMain {
 	public static void main(String[] args) throws IOException {
 
 		// UNIX
+		String folder     = "C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\";
 		File folderOrdo = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\ORDO\\");
 		File folderPheno = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\pheno\\");
 		
@@ -30,6 +31,19 @@ public class RDCOMain {
 		
 		BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\owl_construction\\header.txt"));
 		  
+		
+		// add configuration menu
+		configuration.menu();
+		
+		// get Folders to use with menu
+		String[] folders = configuration.getFolders(); 
+		File folderTest = new File(folder+folders[0]);
+		List< File > listOfFiles = new ArrayList<File> (Arrays.asList(folderTest.listFiles()));
+		if(folders.length>1){
+			folderTest = new File(folder+folders[1]);
+			listOfFiles.addAll(Arrays.asList(folderTest.listFiles()));
+		}
+		
 		String header = "";
 		String line = null;
 		 
@@ -39,10 +53,6 @@ public class RDCOMain {
 		
 		writer.write(header);
 
-		//File[] listOfFiles = folderOrdo.listFiles();
-		List< File > listOfFiles = new ArrayList<File> (Arrays.asList(folderOrdo.listFiles()));
-		listOfFiles.addAll(Arrays.asList(folderPheno.listFiles()));
-		
 	
 		int nfile = 0;
 		for (File fileJson : listOfFiles) {

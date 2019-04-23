@@ -13,6 +13,8 @@ import java.util.List;
 
 
 
+
+
 import RDCO.algorithms.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -72,6 +74,8 @@ public class MethodParser {
 	}
 	
 	public void instaniateObjects(){
+		
+			
 		try {
 			String[] test = method.split("[^\\w]");
 			String className = "";
@@ -102,9 +106,13 @@ public class MethodParser {
 			res.setMethodParent(this);
 			res.instantiateLinkedConcept();			
 		}
+	
 	}
 
 	public String toOWL() {
+		if(! configuration.usedAlgorithm(algo.getLabel())){
+			return "";
+		}
 		String owl="";
 		for(ResultParser res : results){
 			
@@ -115,7 +123,10 @@ public class MethodParser {
 	}
 	
 	
-	public String getDeclaration(){			
+	public String getDeclaration(){		
+		if(! configuration.usedAlgorithm(algo.getLabel())){
+			return "";
+		}
 		String declaraltion = Declaration.Declare(algo);
 		for(ResultParser res : results){			
 			declaraltion+=Declaration.Declare(res);			
