@@ -30,9 +30,6 @@ public abstract class ScoreType {
 	}
 	
 	public String getDeclaration(){
-		//if(declared){return "";}
-		
-		//declared=true;
 		
 		return "\n\n    <!-- "+getIri()+" -->\n\n"
 			+ "    <owl:Class rdf:about=\""+getIri()+"\">\n"

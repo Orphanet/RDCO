@@ -11,14 +11,14 @@ public class configuration {
 	
 	@SuppressWarnings("serial")
 	private static HashMap<String,Boolean> algorithms = new HashMap<String,Boolean>(){{
-		put("Resnik symmetric",true);
-		put("Resnik asymmetric",true);
-		put("Phenodigm",true);
-		put("Jaccard Weighted",true);
-		put("Jaccard St",true);
-		put("Cosine Weighted",true);
-		put( "Cosine",true);
-		put("Bernoulli with grid",true);
+		put("Resnik symmetric",false);
+		put("Resnik asymmetric",false);
+		put("Phenodigm",false);
+		put("Jaccard Weighted",false);
+		put("Jaccard St",false);
+		put("Cosine Weighted",false);
+		put( "Cosine",false);
+		put("Bernoulli with grid",false);
 	}};
 
 	public static String[] getFolders() {
@@ -54,38 +54,42 @@ public class configuration {
 		System.out.println("Indicate a max rank : ");
 		maxRank = (float) input.nextInt();
 		
-		System.out.println("Wich algorithms would you exclude (if you want to exclude multiple algorithms, use ',' to seperate each number) ?");
-		System.out.println("\t1 : Bernoulli with grid\n\t2 : Cosine\n\t3 : Cosine Weighted\n\t4 : Jaccard St\n\t5 : Jaccard Weighted\n\t6 : Phenodigm\n\t7 : Resnik asymmetric\n\t8 : Resnik symmetric\n\t9 : none");
+		System.out.println("Wich algorithms would you include (if you want to include multiple algorithms, use ',' to seperate each number) ?");
+		System.out.println("\t1 : Bernoulli with grid\n\t2 : Cosine\n\t3 : Cosine Weighted\n\t4 : Jaccard St\n\t5 : Jaccard Weighted\n\t6 : Phenodigm\n\t7 : Resnik asymmetric\n\t8 : Resnik symmetric\n\t9 : all");
 		input.nextLine();
 		String list = input.nextLine();
 		String[] algos = list.split(",");
 		for(String algo : algos){
 			switch (algo){
 				case "1":
-					algorithms.put("Bernoulli with grid",false);
+					algorithms.put("Bernoulli with grid",true);
 					break;
 				case "2":
-					algorithms.put("Cosine",false);
+					algorithms.put("Cosine",true);
 					break;
 				case "3":
-					algorithms.put("Cosine Weighted",false);
+					algorithms.put("Cosine Weighted",true);
 					break;
 				case "4":
-					algorithms.put("Jaccard St",false);
+					algorithms.put("Jaccard St",true);
 					break;
 				case "5":
-					algorithms.put("Jaccard Weighted",false);
+					algorithms.put("Jaccard Weighted",true);
 					break;
 				case "6":
-					algorithms.put("Phenodigm",false);
+					algorithms.put("Phenodigm",true);
 					break;
 				case "7":
-					algorithms.put("Resnik asymmetric",false);
+					algorithms.put("Resnik asymmetric",true);
 					break;
 				case "8":
-					algorithms.put("Resnik symmetric",false);
+					algorithms.put("Resnik symmetric",true);
 					break;
 				default:
+					for(String alg : algorithms.keySet()){
+						algorithms.put(alg,true);
+					}
+					
 			}
 		}
 		

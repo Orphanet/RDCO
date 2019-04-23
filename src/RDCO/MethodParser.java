@@ -124,10 +124,12 @@ public class MethodParser {
 	
 	
 	public String getDeclaration(){		
-		if(! configuration.usedAlgorithm(algo.getLabel())){
-			return "";
-		}
+		
 		String declaraltion = Declaration.Declare(algo);
+		
+		if(! configuration.usedAlgorithm(algo.getLabel())){
+			return declaraltion;
+		}
 		for(ResultParser res : results){			
 			declaraltion+=Declaration.Declare(res);			
 		}

@@ -1,5 +1,10 @@
 package RDCO.scoreTypes;
 
+import java.util.ArrayList;
+
+import RDCO.configuration;
+import RDCO.algorithms.Algorithm;
+import RDCO.algorithms.Phenodigm;
 import RDCO.algorithms.ResnikAsymmetric;
 import RDCO.algorithms.ResnikSymmetric;
 
@@ -12,22 +17,32 @@ public class Type3 extends ScoreType{
 	
 	public String getAlgorithmCollection(){
 		
+		ArrayList<Algorithm> algos = new ArrayList<Algorithm>();
+		if(configuration.usedAlgorithm("Resnik symmetric")){
+			algos.add( new ResnikAsymmetric());
+		}
+		if(configuration.usedAlgorithm("Resnik asymmetric")){
+			algos.add( new ResnikSymmetric());
+		}
 		
-		ResnikAsymmetric asym = new ResnikAsymmetric();
-		ResnikSymmetric  sym  = new ResnikSymmetric();
-		return "        <owl:equivalentClass>\n"
-			+"            <owl:Class>\n"
-			+"                <owl:unionOf rdf:parseType=\"Collection\">\n"
-			+"                    <owl:Restriction>\n"
-			+"                        <owl:onProperty rdf:resource=\"http://semanticscience.org/resource/SIO_000232\"/>\n"
-			+"                        <owl:someValuesFrom rdf:resource=\""+asym.getIri()+"\"/>\n"
-			+"                    </owl:Restriction>\n"
-			+"                    <owl:Restriction>\n"
-			+"                        <owl:onProperty rdf:resource=\"http://semanticscience.org/resource/SIO_000232\"/>\n"
-			+"                        <owl:someValuesFrom rdf:resource=\""+sym.getIri()+"\"/>\n"
-			+"                    </owl:Restriction>\n"
-			+"                </owl:unionOf>\n"
-			+"            </owl:Class>\n"
-			+"        </owl:equivalentClass>\n";
+		/// use this if you want to abort Type3 declaration if no Type 3 algo is declared
+		/*if(algos.size() ==0){
+			return "";
+		}*/
+		
+		String declar = "        <owl:equivalentClass>\n"
+						+"            <owl:Class>\n"
+						+"                <owl:unionOf rdf:parseType=\"Collection\">\n";
+		
+		 for(Algorithm algo : algos){
+			 declar += "                    <owl:Restriction>\n"
+					+"                        <owl:onProperty rdf:resource=\"http://semanticscience.org/resource/SIO_000232\"/>\n"
+					+"                        <owl:someValuesFrom rdf:resource=\""+algo.getIri()+"\"/>\n"
+					+"                    </owl:Restriction>\n";
+		 }
+		declar += "                </owl:unionOf>\n"
+				+"            </owl:Class>\n"
+				+"        </owl:equivalentClass>\n";
+		return declar;
 	}
 }
