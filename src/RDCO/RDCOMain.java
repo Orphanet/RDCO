@@ -23,9 +23,7 @@ public class RDCOMain {
 
 		// UNIX
 		String folder     = "C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\";
-		File folderOrdo = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\ORDO\\");
-		File folderPheno = new File("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\pheno\\");
-		
+
 		BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\RDCO.owl"));
 		BufferedWriter errors_writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\errors.txt"));
 		
