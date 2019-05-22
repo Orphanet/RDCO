@@ -19,10 +19,10 @@ public class Type3 extends ScoreType{
 		
 		ArrayList<Algorithm> algos = new ArrayList<Algorithm>();
 		if(configuration.usedAlgorithm("Resnik symmetric")){
-			algos.add( new ResnikAsymmetric());
+			algos.add( new ResnikSymmetric());
 		}
 		if(configuration.usedAlgorithm("Resnik asymmetric")){
-			algos.add( new ResnikSymmetric());
+			algos.add( new ResnikAsymmetric());
 		}
 		
 		/// use this if you want to abort Type3 declaration if no Type 3 algo is declared
