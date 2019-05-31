@@ -22,15 +22,16 @@ public class RDCOMain {
 	public static void main(String[] args) throws IOException {
 
 		// UNIX
-		String folder     = "C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\inputs\\";
+		String folder     = "/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/inputs/";
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\RDCO.owl"));
-		BufferedWriter errors_writer = new BufferedWriter(new FileWriter("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\outputs\\errors.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/outputs/RDCO.owl"));
+		BufferedWriter errors_writer = new BufferedWriter(new FileWriter("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/outputs/errors.txt"));
 		
-		BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Users\\sdemarest.BROUSSAIS\\gitLuna\\genRDCO\\owl_construction\\header.txt"));
+		BufferedReader bufferedReader = new BufferedReader(new FileReader("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/owl_construction/header.txt"));
 		  
 		
 		// add configuration menu
+		// gere le menu et donc les choix d'algo et rank 
 		configuration.menu();
 		
 		// get Folders to use with menu
@@ -38,6 +39,7 @@ public class RDCOMain {
 		File folderTest = new File(folder+folders[0]);
 		List< File > listOfFiles = new ArrayList<File> (Arrays.asList(folderTest.listFiles()));
 		if(folders.length>1){
+			// si on veut les 2 dossiers ORDO et pheno
 			folderTest = new File(folder+folders[1]);
 			listOfFiles.addAll(Arrays.asList(folderTest.listFiles()));
 		}
@@ -54,6 +56,7 @@ public class RDCOMain {
 	
 		int nfile = 0;
 		for (File fileJson : listOfFiles) {
+			// loop sur les files de results
 			nfile += 1;
 			if (fileJson.isFile()) {
 				
@@ -65,6 +68,7 @@ public class RDCOMain {
 									
 					// Parse file name to get Phenopacket ID
 					String phenoId="";
+					// pour recuper le phenoID dans le nom
 					Pattern pattern = Pattern.compile("^.*_(S\\d+)[_\\.].*$");
 					Matcher match   = pattern.matcher(fileJson.getName());
 					if(match.matches()){
@@ -77,9 +81,11 @@ public class RDCOMain {
 					
 					
 					ObjectMapper objectMapper = new ObjectMapper();
+					// gere la liste des algo 
 					RDCO rdcoObject = objectMapper.readValue(fileJson, RDCO.class);
 					rdcoObject.setPhenoPacketId(phenoId);
 					
+					// transforme les donnees textuelles en classes concepts (disease pheno)
 					rdcoObject.instaniateObjects();
 					
 					//System.out.println(rdcoObject.toString());

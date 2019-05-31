@@ -12,6 +12,13 @@ public class Type1 extends ScoreType{
 		setComment("This score has range 0 and 1.");
 	}
 	
+	
+	
+	// Pour Blank Node collection scoretype et modifier la relation ScoreType/Algo 
+	//supprimer ici getAlgorithmCollection()
+
+	
+	
 	public String getAlgorithmCollection(){
 		
 		ArrayList<Algorithm> algos = new ArrayList<Algorithm>();
@@ -51,4 +58,9 @@ public class Type1 extends ScoreType{
 				+"        </owl:equivalentClass>\n";
 		return declar;
 	}
+	
+	// Fin de suppress 
+
+
+	
 }

@@ -49,6 +49,9 @@ public abstract class Algorithm {
 	public String getDeclaration(){
 		
 		String declaration = Declaration.Declare(scoreType);
+		// Pour Blank Node collection scoretype et modifier la relation ScoreType/Algo 
+		//rajouter dans la line declaration une property pour lier au ScoreType (has_score_type) comme Fanny pour trouver la bonne declaration de property (OLS...)
+		
 		if(configuration.usedAlgorithm(this.label)){
 			declaration +="    <!-- "+getIri()+" -->\n\n    <owl:Class rdf:about=\""+getIri()+"\">\n        <rdfs:subClassOf rdf:resource=\"http://semanticscience.org/resource/SIO_000094\"/>\n        <rdfs:comment rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getComment()+"</rdfs:comment>\n        <rdfs:label rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getLabel()+"</rdfs:label>\n    </owl:Class>\n\n"; 
 		}

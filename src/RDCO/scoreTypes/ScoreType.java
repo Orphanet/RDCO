@@ -33,6 +33,8 @@ public abstract class ScoreType {
 		
 		return "\n\n    <!-- "+getIri()+" -->\n\n"
 			+ "    <owl:Class rdf:about=\""+getIri()+"\">\n"
+			// Pour Blank Node collection scoretype et modifier la relation ScoreType/Algo 
+			//supprimer ici + getAlgorithmCollection()
 			+ getAlgorithmCollection()
 			+ "        <rdfs:subClassOf rdf:resource=\"http://edamontology.org/data_1772\"/>\n"
 			+ "        <rdfs:comment rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getComment()+"</rdfs:comment>\n"
@@ -40,10 +42,16 @@ public abstract class ScoreType {
 			+ "    </owl:Class>\n\n";
 	}
 	
+	
+	// Pour Blank Node collection scoretype et modifier la relation ScoreType/Algo 
+	//supprimer ici getAlgorithmCollection() + et pour chaque ScoreType (1 2 et 3)
 	public String getAlgorithmCollection() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	// fin de suppress
+	
 	public String getId() {
 		return id;
 	}
