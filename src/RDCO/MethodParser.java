@@ -115,12 +115,16 @@ public class MethodParser {
 		}
 		String owl="";
 		for(ResultParser res : results){
-			
+				
+
+
 			owl+=res.toOWL();
 			
 		}
+
 		return owl;
 	}
+	
 	
 	
 	public String getDeclaration(){		

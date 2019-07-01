@@ -8,6 +8,7 @@ public class Phenome extends LinkedConcept{
 		setLabel("Phenopacket "+id);
 		setId(id);
 		setIdentifier("PhenoP:"+id);
+		
 	}
 	
 	public String getDeclaration(){

@@ -62,6 +62,14 @@ public abstract class Algorithm {
 		if(! configuration.usedAlgorithm(this.label)){
 			return "";
 		}
+		
+		/*
+		// MODIF FOR D.1.11
+		return "    <highlighted_by rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + getIri() + "</highlighted_by>\n"
+		     + "    <has_score rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + scoreType.getIri() + "</has_score>\n";
+		
+		*/
+		
 		return "                <owl:Restriction>\n"
 			+ "                    <owl:onProperty rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#has_score\"/>\n"
 			+ "                    <owl:someValuesFrom rdf:resource=\""+scoreType.getIri()+"\"/>\n"
@@ -70,6 +78,7 @@ public abstract class Algorithm {
 			+ "                    <owl:onProperty rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#highlighted_by\"/>\n"
 			+ "                    <owl:someValuesFrom rdf:resource=\""+getIri()+"\"/>\n"
 			+ "                </owl:Restriction>\n";		
+			
 	}
 	
 }

@@ -76,10 +76,14 @@ public class ResultParser {
 		
 			Pattern patternOrpha = Pattern.compile("^ORPHA:(\\d+)$"); 
 			Matcher matchOrpha   = patternOrpha.matcher(itemId);
+			
 			if(matchOrpha.matches()){
+				//System.out.println("-----ORPHA> "  + itemId);
 				setConcept(new Disease(matchOrpha.group(1),itemName));
 			}else{
-				Pattern patternPheno  = Pattern.compile("^.*_(S\\d+)_.*$"); 
+			//	System.out.println("-----> "  + itemId);
+				//Pattern patternPheno  = Pattern.compile("^.*_(S\\d+)_.*$"); 
+				Pattern patternPheno  = Pattern.compile("^.*(S\\d+).*$");  // Problem with "_" in IDs fixed 
 				Matcher matchPheno    = patternPheno.matcher(itemId);
 				if(matchPheno.matches()){
 	
@@ -105,7 +109,10 @@ public class ResultParser {
 		}
 		Algorithm algo = methodParent.getAlgo();
 		
-		
+		//
+		Float score = getScore();
+		//
+
 		return "<!-- "+methodParent.getRDCOParent().getBaseIri() +concept.getIdentifier()+"_PhenoP:"+getPhenoId()+"_Algo:"+algo.getId()+" -->\n\n"
 				+"<owl:Class rdf:about=\""+methodParent.getRDCOParent().getBaseIri() +concept.getIdentifier()+"_PhenoP:"+getPhenoId()+"_Algo:"+algo.getId()+"\">\n"
 				+ "    <owl:equivalentClass>\n"
@@ -123,13 +130,27 @@ public class ResultParser {
 				+ algo.toOWL()
 				+ "                <owl:Restriction>\n"
 				+ "                    <owl:onProperty rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#has_score_value\"/>\n"
+		//		+ "                    <owl:hasValue rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+getScore()+"</owl:hasValue>\n"		 // TEST TO CHANGE VALUE FLOAT TO  STRING		
 				+ "                    <owl:hasValue rdf:datatype=\"http://www.w3.org/2001/XMLSchema#float\">"+getScore()+"</owl:hasValue>\n"
 				+ "                </owl:Restriction>\n"
 				+ "            </owl:intersectionOf>\n"
 				+ "        </owl:Class>\n"
 				+ "    </owl:equivalentClass>\n"
 				+ typeOfAsso+"\n"
+				
 				+ "    <rdfs:label rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+concept.getIdentifier()+"_PhenoP:"+getPhenoId()+"_Algo:"+algo.getId()+"</rdfs:label>\n"
+			
+				/*
+				// ADD TO FIX 
+				+ "    <association_has_subject rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"+methodParent.getRDCOParent().getBaseIri() +"Phenopacket_"+getPhenoId()+"</association_has_subject>\n"
+				+ concept.toOWL()
+				+ "    <has_similarity_level rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">HOM_0000000</has_similarity_level>\n"
+				+ algo.toOWL()
+				+ "    <has_value rdf:datatype=\"http://www.w3.org/2001/XMLSchema#float\">"+score+"</has_value>\n"
+				//has_value NOT has_score_value !!!
+				*/
+				
+				
 				+ "</owl:Class>\n\n";
 		
 		

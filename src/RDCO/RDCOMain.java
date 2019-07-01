@@ -24,7 +24,7 @@ public class RDCOMain {
 		// UNIX
 		String folder     = "/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/inputs/";
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/outputs/RDCO.owl"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/outputs/RDCO_ORDO_D1.11_collection_STRING.owl"));
 		BufferedWriter errors_writer = new BufferedWriter(new FileWriter("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/outputs/errors.txt"));
 		
 		BufferedReader bufferedReader = new BufferedReader(new FileReader("/media/sf_D_DRIVE/Research_Projects/Solve-RD/RDCO/genRDCO/RDCO/owl_construction/header.txt"));
@@ -66,14 +66,25 @@ public class RDCOMain {
 					System.out.println("-----> " + fileJson + " - " + nfile);
 					
 									
+					// OLD METHOD FROM SAMUEL 
 					// Parse file name to get Phenopacket ID
+					/*
 					String phenoId="";
 					// pour recuper le phenoID dans le nom
+					
 					Pattern pattern = Pattern.compile("^.*_(S\\d+)[_\\.].*$");
+					
 					Matcher match   = pattern.matcher(fileJson.getName());
 					if(match.matches()){
 						phenoId = match.group(1);
+						
 					}
+						*/
+					//System.out.println("======> START: " + phenoId + " " + fileJson.getName());
+					
+					
+					String phenoId = fileJson.getName().split("\\.")[0];
+					
 					
 					Phenome subject = new Phenome(phenoId);
 					

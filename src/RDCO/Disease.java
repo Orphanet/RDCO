@@ -13,10 +13,18 @@ public class Disease extends LinkedConcept{
 	}
 	
 	public String toOWL(){
+		
+		// MODIF FOR D.1.11
+		/*
+		return "    <has_object_clinicalEntity rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">" + getIri() + "</has_object_clinicalEntity>\n";
+
+		*/
 		return "                <owl:Restriction>\n"
 			+ "                    <owl:onProperty rdf:resource=\"http://www.semanticweb.org/RDCO_model_A_oct2018#has_object_clinicalEntity\"/>\n"
 			+ "                    <owl:someValuesFrom rdf:resource= \""+getIri()+"\"/>\n"
 			+ "                </owl:Restriction>\n";
-	}
+			
+			
+			}
 }
 	
